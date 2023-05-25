@@ -8,7 +8,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -16,7 +15,6 @@ import tj.mangotask.data.remote.AuthApi
 import tj.mangotask.data.remote.AuthInterceptor
 import tj.mangotask.data.remote.UserApi
 import java.util.concurrent.TimeUnit
-import javax.inject.Qualifier
 import javax.inject.Singleton
 
 const val BASE_URL = "https://plannerok.ru/"
@@ -30,7 +28,8 @@ object NetworkModule {
     fun provideLoggingInterceptor(
     ): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
-            HttpLoggingInterceptor.Level.BODY
+            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY
+            else HttpLoggingInterceptor.Level.NONE
         }
     }
 
