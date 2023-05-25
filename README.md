@@ -24,3 +24,6 @@
 - [CountryCodePicker](https://github.com/hbb20/CountryCodePickerProject)
 - [SmsConfirmationView](https://github.com/fraggjkee/sms-confirmation-view)
 - [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
+
+### Build Debug APK:
+[app-debug.zip](https://github.com/ManuchekhrT/MangoTestTask/files/11564009/app-debug.zip)
